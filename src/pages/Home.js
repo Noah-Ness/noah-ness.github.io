@@ -149,10 +149,10 @@ export default function Home({
 
   // ─── Skills Formatting ───
   const categories = [
-    { name: "Coding", color: "var(--accent-1)" },
-    { name: "Cloud / DevOps", color: "var(--accent-2)" },
+    { name: "Consultancy", color: "var(--accent-1)" },
+    { name: "Application", color: "var(--accent-2)" },
     { name: "Analytics", color: "#47C1BF" },
-    { name: "AI / Data", color: "#FFB300" },
+    { name: "Processes", color: "#FFB300" },
     { name: "Automation", color: "#14a800ff" },
   ];
 
