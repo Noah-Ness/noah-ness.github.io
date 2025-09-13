@@ -192,6 +192,7 @@ export default function Home({
 
   // Counts for filter display
   const techCounts    = getCounts(techBase, 'technologies', uniqueTechs);
+  const secCounts    = getCounts(sectionBase, 'sections', uniqueSections);
 
   const heroInnerRef = useRef(null);
 
@@ -245,6 +246,11 @@ export default function Home({
   // Toggle handlers
   const toggleTech = (t) =>
     setSelectedTechs((prev) =>
+      prev.includes(t) ? prev.filter((x) => x !== t) : [...prev, t]
+    );
+
+  const toggleSec = (t) =>
+    setSelectedSections((prev) =>
       prev.includes(t) ? prev.filter((x) => x !== t) : [...prev, t]
     );
 
@@ -407,18 +413,18 @@ export default function Home({
           <div className="filter-section">
             <div className="filter-group">
               <span className="filter-label">
-                {lang === 'EN' ? 'Filter by Technology' : 'Filter nach Technologie'}
+                {lang === 'EN' ? 'Filter by Section' : 'Filter nach Bereich'}
               </span>
-              <div className="filter-pills tech-filters">
-                {uniqueTechs
-                  .filter((t) => techCounts[t] > 0)
+              <div className="filter-pills section-filters">
+                {uniqueSections
+                  .filter((t) => secCounts[t] > 0)
                   .map((t) => (
                     <button
                       key={t}
-                      className={`pill ${selectedTechs.includes(t) ? 'active' : ''}`}
-                      onClick={() => toggleTech(t)}
+                      className={`pill ${selectedSections.includes(t) ? 'active' : ''}`}
+                      onClick={() => toggleSec(t)}
                     >
-                      {t} ({techCounts[t]})
+                      {t} ({secCounts[t]})
                     </button>
                   ))}
               </div>
