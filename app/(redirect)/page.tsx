@@ -1,13 +1,10 @@
 import type { Metadata } from "next"
-
-const title = "Noah Nesslauer – Lebenslauf"
-const description =
-  "Lebenslauf von Noah Nesslauer: Werdegang, Projekte, Kenntnisse und Zertifikate."
+import { DEFAULT_COPY, SITE_URL } from "@/lib/seo"
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://nesslauer.smiit.de"),
-  title,
-  description,
+  metadataBase: new URL(SITE_URL),
+  title: DEFAULT_COPY.title.de,
+  description: DEFAULT_COPY.description.de,
   alternates: {
     canonical: "/de/",
     languages: {
